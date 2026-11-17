@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Study Planner — ExamPrepAI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebarMount"></aside>
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">YOUR NEXT BEST STEP</div>
+            <h1>Adaptive study planner</h1>
+            <p class="muted">
+              Build a manageable plan around your available time and weaker
+              topics.
+            </p>
+          </div>
+          <span class="page-icon">☷</span>
+        </header>
+        <section class="planner-hero panel">
+          <div>
+            <span class="pill pill-purple">RULE-BASED DEMO</span>
+            <h2>A plan that responds to your practice</h2>
+            <p class="muted">
+              Generate tasks based on current topic mastery and daily study
+              hours. Complete tasks to track progress.
+            </p>
+          </div>
+          <button id="generatePlan" class="btn btn-primary">
+            Generate adaptive plan <span>→</span>
+          </button>
+        </section>
+        <section class="planner-summary stats-grid">
+          <article class="stat-card">
+            <small>Daily time budget</small
+            ><strong id="hoursSummary">2 hrs</strong>
+            <div class="stat-foot">From your goals</div>
+          </article>
+          <article class="stat-card">
+            <small>Planned tasks</small><strong id="taskSummary">0</strong>
+            <div class="stat-foot">For this learning cycle</div>
+          </article>
+          <article class="stat-card">
+            <small>Completed</small><strong id="completedSummary">0</strong>
+            <div class="stat-foot">Keep making progress</div>
+          </article>
+          <article class="stat-card">
+            <small>Completion</small><strong id="completionSummary">0%</strong>
+            <div class="stat-foot">Tasks completed</div>
+          </article>
+        </section>
+        <section class="panel plan-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Your study tasks</h3>
+              <p class="muted" id="planDescription">
+                Generate a plan to begin.
+              </p>
+            </div>
+            <span class="calendar-icon">✓</span>
+          </div>
+          <div id="planTasks" class="plan-tasks"></div>
+        </section>
+        <div class="two-note">
+          <div class="note-box">
+            <b>How adaptation works</b>
+            <p>
+              Lower mastery topics are prioritized first. The number and
+              duration of tasks respond to the daily hours selected in My Goals.
+            </p>
+          </div>
+          <div class="note-box">
+            <b>Prototype limitation</b>
+            <p>
+              Task generation uses transparent rules and sample content; live
+              AI-generated plans are future scope.
+            </p>
+          </div>
+        </div>
+        <footer class="footer-note">
+          Tasks are saved locally in this browser.
+        </footer>
+      </main>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/planner.js"></script>
+  </body>
+</html>

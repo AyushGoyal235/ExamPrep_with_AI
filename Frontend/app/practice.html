@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Practice DSA — ExamPrepAI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebarMount"></aside>
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">LEARN BY DOING</div>
+            <h1>DSA practice</h1>
+            <p class="muted">
+              Attempt a question, get instant feedback, and update your topic
+              mastery.
+            </p>
+          </div>
+          <span class="page-icon">⌘</span>
+        </header>
+        <section class="practice-layout">
+          <div class="practice-main">
+            <div class="filter-row">
+              <label
+                >Topic<select id="topicFilter">
+                  <option>All topics</option>
+                  <option>Arrays</option>
+                  <option>Strings</option>
+                  <option>Binary Search</option>
+                  <option>Linked List</option>
+                  <option>Dynamic Programming</option>
+                  <option>Graphs</option>
+                </select></label
+              ><label
+                >Difficulty<select id="difficultyFilter">
+                  <option>All levels</option>
+                  <option>Easy</option>
+                  <option>Medium</option>
+                  <option>Hard</option>
+                </select></label
+              ><span class="muted" id="questionCount">0 questions</span>
+            </div>
+            <div id="questionList" class="question-list"></div>
+          </div>
+          <aside class="panel practice-side">
+            <div class="side-heading">
+              <span class="stat-icon violet">✦</span>
+              <div>
+                <h3>Practice loop</h3>
+                <p class="muted">Every attempt helps personalize your path.</p>
+              </div>
+            </div>
+            <div class="loop-step">
+              <span>1</span>
+              <div>
+                <b>Choose a question</b
+                ><small>Pick a topic you want to strengthen.</small>
+              </div>
+            </div>
+            <div class="loop-step">
+              <span>2</span>
+              <div>
+                <b>Submit your answer</b
+                ><small>See whether your reasoning was correct.</small>
+              </div>
+            </div>
+            <div class="loop-step">
+              <span>3</span>
+              <div>
+                <b>Revise mistakes</b
+                ><small>Incorrect answers go to Smart Revision.</small>
+              </div>
+            </div>
+            <div class="note-box">
+              This prototype uses sample MCQ-style DSA questions to demonstrate
+              the learning flow.
+            </div>
+          </aside>
+        </section>
+        <div id="questionModal" class="modal hidden">
+          <div class="modal-backdrop" data-close="true"></div>
+          <section class="modal-card">
+            <button id="closeModal" class="modal-close" aria-label="Close">
+              ×
+            </button>
+            <div id="questionDetail"></div>
+          </section>
+        </div>
+        <footer class="footer-note">
+          Practice data is saved in localStorage on this device.
+        </footer>
+      </main>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/practice.js"></script>
+  </body>
+</html>

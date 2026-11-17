@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ExamPrepAI — Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E</span>
+          <span>
+            ExamPrep<span class="ai">AI</span>
+            <small>PERSONALIZED DSA PREP</small>
+          </span>
+        </a>
+
+        <div class="nav-label">WORKSPACE</div>
+
+        <nav class="nav">
+          <a class="nav-link active" href="index.html">
+            <span>▦</span> Overview
+          </a>
+
+          <a class="nav-link" href="setup.html">
+            <span>◉</span> My Goals
+          </a>
+
+          <a class="nav-link" href="practice.html">
+            <span>⌘</span> Practice DSA
+          </a>
+
+          <a class="nav-link" href="planner.html">
+            <span>☷</span> Study Planner
+          </a>
+
+          <a class="nav-link" href="revision.html">
+            <span>↻</span> Smart Revision
+            <em id="revisionCount">0</em>
+          </a>
+
+          <a class="nav-link" href="progress.html">
+            <span>▥</span> Progress & Readiness
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="avatar">AG</div>
+
+          <div>
+            <b id="sidebarName">Student</b>
+            <small>Student workspace</small>
+          </div>
+
+          <span class="online-dot"></span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">YOUR LEARNING SPACE</div>
+            <h1 id="greeting">Ayush Goyal</h1>
+            <p class="muted">
+              A focused plan for your next step in DSA.
+            </p>
+          </div>
+
+          <a class="btn btn-primary" href="practice.html">
+            Start practicing <span>→</span>
+          </a>
+        </header>
+
+        <section class="hero-card">
+          <div class="hero-copy">
+            <span class="pill pill-light">YOUR PERSONAL ROADMAP</span>
+
+            <h2>
+              Small steps.<br />
+              <span>Stronger problem-solving.</span>
+            </h2>
+
+            <p id="heroText">
+              Practice consistently, find your weak topics, and turn them into
+              strengths.
+            </p>
+
+            <a href="planner.html" class="hero-link">
+              View today's plan <span>↗</span>
+            </a>
+          </div>
+
+          <div class="hero-visual">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="hero-bubble bubble-a">DSA</div>
+            <div class="hero-bubble bubble-b">✓</div>
+            <div class="hero-bubble bubble-c">AI</div>
+
+            <div class="hero-stat">
+              <small>Readiness estimate</small>
+              <strong id="heroReadiness">12<span>%</span></strong>
+
+              <div class="mini-progress">
+                <i id="heroProgress"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon violet">⌘</span>
+              <span class="trend">Practice</span>
+            </div>
+
+            <small>Questions attempted</small>
+            <strong id="attemptedStat">0</strong>
+            <div class="stat-foot">Keep your streak going</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon green">✓</span>
+              <span class="trend">Accuracy</span>
+            </div>
+
+            <small>Correct answers</small>
+            <strong id="accuracyStat">—</strong>
+            <div class="stat-foot">Across your attempts</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon orange">◈</span>
+              <span class="trend">Focus area</span>
+            </div>
+
+            <small>Topic to improve</small>
+            <strong class="stat-topic" id="weakTopicStat">Arrays</strong>
+            <div class="stat-foot">Your next growth opportunity</div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon blue">☷</span>
+              <span class="trend">Today</span>
+            </div>
+
+            <small>Plan completion</small>
+            <strong id="planStat">0%</strong>
+            <div class="stat-foot">Complete one task at a time</div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel mastery-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Topic mastery</h3>
+                <p class="muted">Your current understanding by topic</p>
+              </div>
+
+              <a href="progress.html" class="text-link">
+                View details →
+              </a>
+            </div>
+
+            <div id="masteryBars" class="mastery-bars"></div>
+
+            <div class="legend">
+              <span>
+                <i class="legend-dot dot-violet"></i> Mastery score
+              </span>
+              <span class="muted">Prototype estimate</span>
+            </div>
+          </article>
+
+          <article class="panel today-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Today's focus</h3>
+                <p class="muted">A simple plan to get started</p>
+              </div>
+
+              <span class="calendar-icon">▦</span>
+            </div>
+
+            <div id="todayTasks" class="today-tasks"></div>
+
+            <a href="planner.html" class="btn btn-outline btn-full">
+              Open study planner →
+            </a>
+          </article>
+        </section>
+
+        <section class="panel activity-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Recent practice</h3>
+              <p class="muted">Your latest question attempts</p>
+            </div>
+
+            <a href="practice.html" class="text-link">
+              Practice more →
+            </a>
+          </div>
+
+          <div id="recentAttempts" class="recent-list"></div>
+        </section>
+
+        <footer class="footer-note">
+          ExamPrepAI · Frontend prototype · Sample questions and local demo data
+        </footer>
+      </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

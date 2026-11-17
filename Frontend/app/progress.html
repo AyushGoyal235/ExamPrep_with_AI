@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Progress & Readiness — ExamPrepAI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebarMount"></aside>
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">MEASURE WHAT MATTERS</div>
+            <h1>Progress & readiness</h1>
+            <p class="muted">
+              A transparent snapshot of your practice and topic-level
+              improvement.
+            </p>
+          </div>
+          <span class="page-icon">▥</span>
+        </header>
+        <section class="readiness-layout">
+          <article class="panel readiness-card">
+            <div class="panel-heading">
+              <div>
+                <h3>Placement readiness</h3>
+                <p class="muted">Prototype estimate, not a hiring prediction</p>
+              </div>
+              <span class="pill pill-purple">DEMO SCORE</span>
+            </div>
+            <div class="readiness-gauge">
+              <div class="gauge-ring" id="gaugeRing">
+                <div>
+                  <strong id="readinessScore">12</strong><small>/ 100</small>
+                </div>
+              </div>
+              <div class="readiness-copy">
+                <h3 id="readinessLabel">Building foundations</h3>
+                <p id="readinessDescription">
+                  Start practicing to build a stronger baseline.
+                </p>
+                <div class="readiness-metric">
+                  <span>Topic mastery</span><b id="masteryMetric">0%</b>
+                </div>
+                <div class="readiness-metric">
+                  <span>Answer accuracy</span><b id="accuracyMetric">—</b>
+                </div>
+                <div class="readiness-metric">
+                  <span>Practice attempts</span><b id="attemptMetric">0</b>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="panel insight-card">
+            <div class="panel-heading">
+              <div>
+                <h3>What to focus on</h3>
+                <p class="muted">Suggested next steps from your current data</p>
+              </div>
+            </div>
+            <div id="insightsList" class="insights-list"></div>
+          </article>
+        </section>
+        <section class="panel progress-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Mastery by topic</h3>
+              <p class="muted">Scores change as you practice questions</p>
+            </div>
+            <span class="muted">0–100 scale</span>
+          </div>
+          <div id="progressTopicBars" class="progress-topic-bars"></div>
+        </section>
+        <section class="panel history-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Attempt history</h3>
+              <p class="muted">Most recent activity first</p>
+            </div>
+            <button id="resetDemo" class="btn btn-outline btn-small">
+              Reset demo data
+            </button>
+          </div>
+          <div id="attemptHistory" class="recent-list"></div>
+        </section>
+        <footer class="footer-note">
+          Readiness is a simplified educational demo metric; it is not an actual
+          placement probability.
+        </footer>
+      </main>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="data/questions.js"></script>
+    <script src="js/progress.js"></script>
+  </body>
+</html>
